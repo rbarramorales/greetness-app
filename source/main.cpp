@@ -1,9 +1,8 @@
 #include <iostream>
 #include <string>
 
-#include "lib.hpp"
-
 #include "greetness2/greetness2.hpp"
+#include "lib.hpp"
 
 auto main() -> int
 {
