@@ -31,6 +31,7 @@ target_compile_features(greetness-app_lib PUBLIC cxx_std_17)
 find_package(fmt REQUIRED)
 target_link_libraries(greetness-app_lib PRIVATE fmt::fmt)
 
+
 # ---- Declare executable ----
 
 add_executable(greetness-app_exe source/main.cpp)
@@ -39,6 +40,9 @@ add_executable(greetness-app::exe ALIAS greetness-app_exe)
 set_property(TARGET greetness-app_exe PROPERTY OUTPUT_NAME greetness-app)
 
 target_compile_features(greetness-app_exe PRIVATE cxx_std_17)
+
+find_package(greetness2 REQUIRED)
+target_link_libraries(greetness-app_exe PRIVATE greetness2::greetness2)
 
 target_link_libraries(greetness-app_exe PRIVATE greetness-app_lib)
 
